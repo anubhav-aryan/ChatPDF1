@@ -4,6 +4,7 @@ import { UserButton, useAuth } from "@clerk/nextjs";
 import React, { useEffect, useState } from "react";
 import { ArrowRight, LogIn } from "lucide-react";
 import Link from "next/link";
+import FileUpload from "@/components/FileUpload";
 
 export default function Home() {
   const { userId } = useAuth();
@@ -38,7 +39,7 @@ export default function Home() {
           </p>
 
           <div className="w-full mt-4">
-            {isAuth ? (<h1>File Upload</h1>):(
+            {isAuth ? (<FileUpload/>):(
               <Link href='/sign-in'>
                 <Button> Login to get Started! 
                 <LogIn className="m-4 h-5 ml-2" />
